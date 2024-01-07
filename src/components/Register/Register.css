@@ -1,0 +1,11 @@
+.register-container{
+    background-color: rgba(0, 8, 255, 0.062);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-form-container{
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+}

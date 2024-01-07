@@ -1,0 +1,19 @@
+.login-container{
+    background-color: rgba(0, 8, 255, 0.062);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form-container{
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+}
+.form-heading{
+    font-weight: 600;
+    color: blueviolet;
+}
+.form-btns{
+    width: 100%;
+    height: 40px;
+}
