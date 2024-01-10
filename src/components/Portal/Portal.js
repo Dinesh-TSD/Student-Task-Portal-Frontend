@@ -1,18 +1,21 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import TopSide from "../TopSide/TopSide";
+import Sidebar from "../Sidebar/Sidebar";
 
 const Portal = () => {
   const navigate = useNavigate();
+
+  
   useEffect(() => {
     if (!localStorage.getItem("token")) {
       navigate("/");
     }
   }, [navigate]);
+
   return (
     <>
-      <TopSide />
+      <Sidebar />
       <ToastContainer />
       <Outlet />
     </>
