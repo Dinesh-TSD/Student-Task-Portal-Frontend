@@ -5,9 +5,13 @@ import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import axios from "axios";
 import { isAuthenticated } from "../auth";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "../../reducers/authSlicer";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const Loginmes = () =>
     toast("Login Success", {
@@ -41,8 +45,10 @@ const Login = () => {
           "http://127.0.0.1:8080/api/v1/login",
           values
         );
+        console.log(res.data);
+        dispatch(loginSuccess(res.data))
         localStorage.setItem("token", res.data.token);
-        navigate("/portal/dashboard");
+        navigate("/portal/class");
         Loginmes();
       } catch (error) {
         console.log(error);
@@ -52,7 +58,7 @@ const Login = () => {
 
   React.useEffect(() => {
     if (isAuthenticated()) {
-      navigate("/portal/dashboard");
+      navigate("/portal/class");
     }
   }, [navigate]);
 

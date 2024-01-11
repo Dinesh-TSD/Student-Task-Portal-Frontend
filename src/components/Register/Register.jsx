@@ -45,7 +45,7 @@ const Register = () => {
             "http://127.0.0.1:8080/api/v1/register",
             values
           );
-          navigate("/portal/dashboard");
+          navigate("/portal/class");
           closemeg();
         } catch (error) {
           console.log(error);
