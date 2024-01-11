@@ -1,14 +1,14 @@
 import React from 'react'
-import './Task.css'
+import './Tasks.css'
 
-const Task = () => {
+const Tasks = () => {
   return (
     <>
     <div className="content-container">
-      <h1>Task</h1>
+      <h1>Tasks</h1>
     </div>
     </>
   )
 }
 
-export default Task
+export default Tasks

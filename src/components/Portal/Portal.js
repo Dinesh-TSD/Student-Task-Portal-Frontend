@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -17,8 +17,7 @@ const Portal = () => {
     <>
       <Sidebar />
       <ToastContainer />
-      <Outlet />
-    </>
+    </> 
   );
 };
 
