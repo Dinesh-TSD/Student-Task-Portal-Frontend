@@ -11,9 +11,8 @@ const Sidebar = () => {
 
   const navigate = useNavigate();
 
-  // const { user } = useSelector((state) => state.user);
   const { user } = useContext(UserContext);
-  console.log("profile", user);
+  
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/");

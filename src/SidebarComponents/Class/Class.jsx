@@ -32,7 +32,7 @@ const Class = () => {
             handleNumberClick={handleNumberClick}
           />
 
-          {selectedNumber ? <TaskForm number={selectedNumber} /> : <ZoomTest />}
+          {selectedNumber ? <TaskForm data={data} number={selectedNumber} /> : <ZoomTest />}
         </div>
       </div>
     </>

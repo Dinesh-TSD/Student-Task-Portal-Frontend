@@ -9,7 +9,7 @@ const ZoomTest = () => {
             <h2 className="class-tittle">Join the class on time </h2>
           </div>
 
-          <div className="card-body">
+          <div className="card-body zoom-test-body">
             <h3 className="title">No Session title available</h3>
             <h4>class schedule not updated</h4>
           </div>
