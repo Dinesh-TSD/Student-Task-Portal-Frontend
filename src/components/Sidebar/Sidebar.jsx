@@ -12,6 +12,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const { user } = useSelector((state) => state.user);
+  console.log("profile", user);
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/");
@@ -43,7 +44,7 @@ const Sidebar = () => {
 
               <div className="nav-list">
                 <Link to="class" className="nav-link active">
-                  <i class="fa-solid fa-laptop"></i>
+                  <i className="fa-solid fa-laptop"></i>
                   <span className="nav-link-name">Class</span>
                 </Link>
                 <Link to="dashboard" className="nav-link ">

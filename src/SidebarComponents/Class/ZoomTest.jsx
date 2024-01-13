@@ -4,12 +4,12 @@ const ZoomTest = () => {
   return (
     <>
       <div className="col-xl-8 col-lg-7">
-        <div class="cards shadow mb-4 mt-3">
-          <div class="card-header py-3 ps-3">
-            <h2 class="class-tittle">Join the class on time </h2>
+        <div className="cards shadow mb-4 mt-3">
+          <div className="card-header py-3 ps-3">
+            <h2 className="class-tittle">Join the class on time </h2>
           </div>
 
-          <div class="card-body">
+          <div className="card-body">
             <h3 className="title">No Session title available</h3>
             <h4>class schedule not updated</h4>
           </div>

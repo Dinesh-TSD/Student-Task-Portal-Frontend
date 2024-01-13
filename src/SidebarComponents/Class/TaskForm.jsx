@@ -7,10 +7,11 @@ import { toast } from "react-toastify";
 
 const TaskForm = ({ number }) => {
   const { user } = useSelector((state) => state.user);
+  console.log("user",user);
   const params = useParams();
 
   const Taskmes = () =>
-    toast("Login Success", {
+    toast("Task Submited Success", {
       type: toast.TYPE.SUCCESS,
       autoClose: 1000,
     });
@@ -18,17 +19,17 @@ const TaskForm = ({ number }) => {
   const formik = useFormik({
     initialValues: {
       front: "",
-      password: "",
+      back: "",
     },
     validate: (values) => {
       let errors = {};
 
       if (!values.front) {
-        errors.front = "Please enter front";
+        errors.front = "Please enter frontend url";
       }
 
-      if (!values.password) {
-        errors.password = "Please enter password";
+      if (!values.back) {
+        errors.back = "Please enter backend url";
       }
 
       return errors;

@@ -8,18 +8,21 @@ import TaskForm from "./TaskForm";
 
 const Class = () => {
   const [selectedNumber, setSelectedNumber] = useState(null);
+  const [data, setData] = useState(null);
 
-  const handleNumberClick = (number) => {
-    setSelectedNumber(number);
+  const handleNumberClick = (id, title,zoomlink,reflink,tasklink,content) => {
+    setSelectedNumber(id);
+    setData({id, title,zoomlink,reflink,tasklink,content})
   };
-
+  // console.log("setdata", data);
+  // console.log("setid", selectedNumber);
   return (
     <>
       <div className="content-container">
         <div className="row">
           {/* Left side NumberComponent */}
           {selectedNumber ? (
-            <ZoomMeeting number={selectedNumber} />
+            <ZoomMeeting data={data} />
           ) : (
             <ZoomTest />
           )}
@@ -29,12 +32,7 @@ const Class = () => {
             handleNumberClick={handleNumberClick}
           />
 
-          {selectedNumber ? (
-            <TaskForm number={selectedNumber} />
-          ) : (
-            <ZoomTest />
-          )}
-          
+          {selectedNumber ? <TaskForm number={selectedNumber} /> : <ZoomTest />}
         </div>
       </div>
     </>

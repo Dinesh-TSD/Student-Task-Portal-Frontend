@@ -1,30 +1,30 @@
 import React from "react";
+import ClassData from "./ClassData";
 
 const RoadMap = ({ selectedNumber, handleNumberClick }) => {
   return (
     <>
       <div className="col-xl-4">
-        <div class="road-cards shadow mb-4 mt-3">
-          <div class="card-header py-3 ps-3">
-            <h2 class="class-tittle">Road Map</h2>
+        <div className="road-cards shadow mb-4 mt-3">
+          <div className="card-header py-3 ps-3">
+            <h2 className="class-tittle">Road Map</h2>
           </div>
-          <div class="card-body">
+          
+          <div className="card-body">
             {/* Right side list of numbers */}
-            {[
-              1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-              20,
-            ].map((number) => (
-              <span
-                key={number}
+            {ClassData.map((data,index) => {
+              return <span
+                key={index +1}
                 className={`number-item ${
-                  selectedNumber === number ? "selected" : ""
-                } ${number >= 10 ? "last" : ""}`}
-                onClick={() => handleNumberClick(number)}
+                  selectedNumber === data.id ? "selected" : ""
+                } ${data.id >= 10 ? "last" : ""}`}
+                onClick={() => handleNumberClick(data.id,data.title,data.zoomlink,data.reflink,data.tasklink,data.content)}
               >
-                {number}
-              </span>
-            ))}
+                {data.id}
+              </span>;
+            })}
           </div>
+        
         </div>
       </div>
     </>
