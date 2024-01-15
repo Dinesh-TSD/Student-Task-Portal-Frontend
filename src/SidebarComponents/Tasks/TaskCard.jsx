@@ -32,7 +32,7 @@ console.log(formattedDate);
             <div className="col-xl-4">
                 <span className='date'>Submited on {formattedDate}</span>
                 <div className='marks-bg'>
-                  <span className='marks'>10</span>
+                  <span className='marks'>{task.mark}</span>
                   <span className='marks'>Task</span>
                 </div>
             </div>

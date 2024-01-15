@@ -2,7 +2,7 @@
 /* Add this CSS to your stylesheets or in a separate CSS file */
 .number-item {
     display: inline-block;
-    margin: 15px;
+    margin: 20px;
     padding-left: 15px;
     padding-top: 7px;
     width: 40px;
@@ -24,11 +24,13 @@
   border-radius: 8px;
   border-top-right-radius: 8px !important;
   border-top-left-radius: 8px !important;
+  
 }
 .road-cards{
   word-wrap: break-word;
   border: 1px solid #ccc;
   border-radius: 8px;
+  
 }
 .zoom-test-body{
   padding-top: 50px;
