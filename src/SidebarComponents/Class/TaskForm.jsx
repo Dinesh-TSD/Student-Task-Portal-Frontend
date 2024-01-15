@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { UserContext } from "../../Context/userContext";
 
 const TaskForm = ({ number, data }) => {
-  const { user, setTaskvalue } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const name = user.name;
   const studentId = user.id;
@@ -47,7 +47,6 @@ const TaskForm = ({ number, data }) => {
           `http://127.0.0.1:8080/api/v1/task`,
           values
         );
-        setTaskvalue(taskDetail)
         Taskmes();
         console.log(taskDetail);
       } catch (error) {
