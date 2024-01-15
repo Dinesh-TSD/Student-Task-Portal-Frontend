@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Sidebar.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import profile from "../../assets/boy.jpg";
-import { useSelector } from "react-redux";
+import { UserContext } from "../../Context/userContext";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
 
   const navigate = useNavigate();
 
-  const { user } = useSelector((state) => state.user);
+  const { user } = useContext(UserContext);
+  
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/");
@@ -28,7 +29,8 @@ const Sidebar = () => {
             />
           </div>
           <div className="profile">
-            {/* <span className="profile-name"> {user.name} </span> */}
+            {user ? <span className="profile-name"> {user.name} </span> : ""}
+
             <img className="img-profile rounded-circle" alt="" src={profile} />
           </div>
         </header>
@@ -43,7 +45,7 @@ const Sidebar = () => {
 
               <div className="nav-list">
                 <Link to="class" className="nav-link active">
-                  <i class="fa-solid fa-laptop"></i>
+                  <i className="fa-solid fa-laptop"></i>
                   <span className="nav-link-name">Class</span>
                 </Link>
                 <Link to="dashboard" className="nav-link ">

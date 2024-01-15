@@ -105,7 +105,7 @@ const ClassData =[
     },
     {
       "id": 14,
-      "title": "Node.js WebSocket Communication",
+      "title": " JWT Token",
       "zoomlink": "https://example.com/zoom14",
       "tasklink": "https://example.com/task14",
       "reflink": "https://example.com/ref14",
@@ -129,7 +129,7 @@ const ClassData =[
     },
     {
       "id": 17,
-      "title": "Stateful vs Stateless Components in React",
+      "title": "Stateful vs Stateless Components ",
       "zoomlink": "https://example.com/zoom17",
       "tasklink": "https://example.com/task17",
       "reflink": "https://example.com/ref17",
@@ -137,7 +137,7 @@ const ClassData =[
     },
     {
       "id": 18,
-      "title": "Node.js Authentication Middleware",
+      "title": "Node.js Authentication ",
       "zoomlink": "https://example.com/zoom18",
       "tasklink": "https://example.com/task18",
       "reflink": "https://example.com/ref18",
@@ -145,7 +145,7 @@ const ClassData =[
     },
     {
       "id": 19,
-      "title": "React Higher-Order Components (HOCs)",
+      "title": "React Higher-Order Components ",
       "zoomlink": "https://example.com/zoom19",
       "tasklink": "https://example.com/task19",
       "reflink": "https://example.com/ref19",
@@ -160,3 +160,5 @@ const ClassData =[
       "content": ["Formik in React"]
     }
 ]  
+
+export default ClassData

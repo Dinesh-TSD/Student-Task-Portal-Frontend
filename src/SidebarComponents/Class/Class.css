@@ -22,20 +22,25 @@
   word-wrap: break-word;
   border: 1px solid #ccc;
   border-radius: 8px;
+  border-top-right-radius: 8px !important;
+  border-top-left-radius: 8px !important;
 }
 .road-cards{
-  height: 100% !important;
   word-wrap: break-word;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
-
+.zoom-test-body{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
   .card-header{
     background-color: #5500ff;
   }
 
   .refer{
     padding-left: 40px;
+    padding-bottom: 10px;
   }
   .task-link{
     color: white;

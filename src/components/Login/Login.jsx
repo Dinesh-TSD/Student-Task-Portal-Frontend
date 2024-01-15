@@ -1,24 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import axios from "axios";
 import { isAuthenticated } from "../auth";
-import { useDispatch } from "react-redux";
-import { loginSuccess } from "../../reducers/authSlicer";
+import { UserContext } from "../../Context/userContext";
 
 const Login = () => {
   const navigate = useNavigate();
-
-  const dispatch = useDispatch();
+  const { setUser } = useContext(UserContext);
 
   const Loginmes = () =>
     toast("Login Success", {
       type: toast.TYPE.SUCCESS,
       autoClose: 1000,
     });
-
 
   const formik = useFormik({
     initialValues: {
@@ -46,8 +43,10 @@ const Login = () => {
           values
         );
         console.log(res.data);
-        dispatch(loginSuccess(res.data))
+        setUser(res.data.user);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user", JSON.stringify(res.data.user));
+
         navigate("/portal/class");
         Loginmes();
       } catch (error) {
@@ -61,8 +60,6 @@ const Login = () => {
       navigate("/portal/class");
     }
   }, [navigate]);
-
- 
 
   return (
     <>
@@ -134,12 +131,12 @@ const Login = () => {
           </form>
           <div className="row justify-content-center">
             <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10 google-btn">
-              <button
+              {/* <button
                 onClick={''}
                 className="btn btn-primary form-btns mb-3"
               >
                 Sign up with Google
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

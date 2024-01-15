@@ -1,16 +1,19 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import React, { useContext } from "react";
 import { toast } from "react-toastify";
+import { UserContext } from "../../Context/userContext";
 
-const TaskForm = ({ number }) => {
-  const { user } = useSelector((state) => state.user);
-  const params = useParams();
+const TaskForm = ({ number, data }) => {
+  const { user } = useContext(UserContext);
+
+  const name = user.name;
+  const studentId = user.id;
+  const description = data.title;
+  const day = number;
 
   const Taskmes = () =>
-    toast("Login Success", {
+    toast("Task Submited Success", {
       type: toast.TYPE.SUCCESS,
       autoClose: 1000,
     });
@@ -18,30 +21,34 @@ const TaskForm = ({ number }) => {
   const formik = useFormik({
     initialValues: {
       front: "",
-      password: "",
+      back: "",
+      studentId,
+      day,
+      name,
+      description,
     },
     validate: (values) => {
       let errors = {};
 
       if (!values.front) {
-        errors.front = "Please enter front";
+        errors.front = "Please enter frontend url";
       }
 
-      if (!values.password) {
-        errors.password = "Please enter password";
+      if (!values.back) {
+        errors.back = "Please enter backend url";
       }
 
       return errors;
     },
     onSubmit: async (values) => {
       try {
-        //post method create new Account
-        await axios.post(
-          `http://127.0.0.1:8080/api/v1/task/${params.id}`,
-          values,
-          user._id
+        //post method Task submit
+        const taskDetail = await axios.post(
+          `http://127.0.0.1:8080/api/v1/task`,
+          values
         );
         Taskmes();
+        console.log(taskDetail);
       } catch (error) {
         console.log(error);
       }
@@ -51,13 +58,13 @@ const TaskForm = ({ number }) => {
   return (
     <>
       <div className="col-xl-8 col-lg-7">
-        <div class="cards  shadow mb-4 mt-3">
-          <div class="card-header py-3 ps-3">
-            <h2 class="class-tittle">Today Task {number}</h2>
+        <div className="cards  shadow mb-4 mt-3">
+          <div className="card-header py-3 ps-3">
+            <h2 className="class-tittle">Today Task {number}</h2>
           </div>
           <div className="task-bg">
             <form className="task-form" onSubmit={formik.handleSubmit}>
-            <h1 className="text-center task-head">HTML</h1>
+              <h1 className="text-center task-head">HTML</h1>
               <div className="row justify-content-center">
                 <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
                   <label>Frontend Deployed URL</label>
