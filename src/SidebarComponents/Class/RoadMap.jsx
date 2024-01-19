@@ -10,7 +10,7 @@ const RoadMap = ({ selectedNumber, handleNumberClick }) => {
             <h2 className="class-tittle">Road Map</h2>
           </div>
           
-          <div className="card-body">
+          <div className="card-body-road">
             {/* Right side list of numbers */}
             {ClassData.map((data,index) => {
               return <span

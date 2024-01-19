@@ -11,7 +11,6 @@ const TaskForm = ({ number, data }) => {
   const studentId = user.id;
   const description = data.title;
   const day = number;
-
   const Taskmes = () =>
     toast("Task Submited Success", {
       type: toast.TYPE.SUCCESS,

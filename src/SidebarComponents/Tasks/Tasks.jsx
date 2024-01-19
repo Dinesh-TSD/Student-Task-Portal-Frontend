@@ -5,19 +5,22 @@ import TaskCard from "./TaskCard";
 import { UserContext } from "../../Context/userContext";
 
 const Tasks = () => {
-  const { tasks, setTasks } = useContext(UserContext);
-console.log("tasks",tasks);
+  const { tasks, setTasks, user } = useContext(UserContext);
+  const studentId = user.id;
+  console.log("sid", studentId);
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:8080/api/v1/tasks");
+        const res = await axios.post(`http://127.0.0.1:8080/api/v1/tasks`, {
+          userId: studentId,
+        });
         setTasks(res.data.tasks);
       } catch (error) {
         console.log(error);
       }
     };
     getData();
-  }, [setTasks]);
+  }, [setTasks, studentId]);
 
   return (
     <>

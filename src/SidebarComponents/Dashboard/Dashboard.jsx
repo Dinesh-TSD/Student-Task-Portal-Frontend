@@ -12,16 +12,16 @@ const Dashboard = () => {
     <div className="chart-container">
       {/* <h1>Bar Chart</h1> */}
       <div className="row justify-content-center">
-        <div className="col-xl-5 col-lg-7 col-12  chart">
+        <div className="col-xl-5 col-lg-7 col-12 col-md-4 chart">
           <BarChart className="" />
         </div>
-        <div className="col-xl-5 col-lg-7 col-12  chart">
+        <div className="col-xl-5 col-lg-7 col-12 col-md-4 chart">
           <LineChart />
         </div>
-        <div className="col-xl-5 col-lg-7 col-12  chart">
+        <div className="col-xl-5 col-lg-7 col-12 col-md-4 chart">
           <DoughnutChart />
         </div>
-        <div className="col-xl-5 col-lg-7 col-12  chart">
+        <div className="col-xl-5 col-lg-7 col-12 col-md-4 chart">
           <RadarChart />
         </div>
       </div>

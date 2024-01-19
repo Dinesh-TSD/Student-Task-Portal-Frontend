@@ -1,23 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
 import axios from "axios";
+import { UserContext } from "../Context/userContext";
 
 const BarChart = () => {
-  const chartRef = useRef();
+  const { user } = useContext(UserContext);
+  const studentId = user.id;
 
+  const chartRef = useRef();
   const [barData, setBarData] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:8080/api/v1/tasks");
+        const res = await axios.post("http://127.0.0.1:8080/api/v1/charttasks",{
+          userId: studentId,
+        });
+        console.log(res.data.tasks);
         setBarData(res.data.tasks);
       } catch (error) {
         console.log(error);
       }
     };
     getData();
-  }, []);
+  }, [studentId]);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");

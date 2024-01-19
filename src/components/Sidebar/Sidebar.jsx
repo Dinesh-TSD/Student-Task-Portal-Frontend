@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import "./Sidebar.css";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import profile from "../../assets/boy.jpg";
 import { UserContext } from "../../Context/userContext";
+import { MdLeaderboard } from "react-icons/md";
+
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
@@ -12,7 +14,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const { user } = useContext(UserContext);
-  
+
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/");
@@ -28,7 +30,12 @@ const Sidebar = () => {
               icon={faBars}
             />
           </div>
-          <div className="profile">
+          <button className="logout" onClick={logout} type="submit">
+              <i className="fas fa-sign-out nav-link-icon"></i>
+              Logout
+            </button>
+          <div className=" profile">
+           
             {user ? <span className="profile-name"> {user.name} </span> : ""}
 
             <img className="img-profile rounded-circle" alt="" src={profile} />
@@ -38,34 +45,36 @@ const Sidebar = () => {
         <aside className={`sidebar ${show ? "show" : null}`}>
           <nav className="nav">
             <div>
-              <Link to="/student" className="nav-logo">
+              <NavLink to="/student" className="nav-logo">
                 <i className={`fas fa-home-alt nav-logo-icon`}></i>
                 <span className="nav-logo-name">Student</span>
-              </Link>
+              </NavLink>
 
               <div className="nav-list">
-                <Link to="class" className="nav-link active">
-                  <i className="fa-solid fa-laptop"></i>
-                  <span className="nav-link-name">Class</span>
-                </Link>
-                <Link to="dashboard" className="nav-link ">
-                  <i className="fas fa-tachometer-alt nav-link-icon"></i>
-                  <span className="nav-link-name">Dashboard</span>
-                </Link>
-                <Link to="tasks" className="nav-link">
-                  <i className="fas fa-hotel nav-link-icon"></i>
-                  <span className="nav-link-name">Tasks</span>
-                </Link>
-                <Link to="/gallery" className="nav-link">
-                  <i className="fas fa-dollar-sign nav-link-icon"></i>
-                  <span className="nav-link-name">Transaction</span>
-                </Link>
+                <NavLink to="class" className="nav-link ">
+                  <i className="fa-solid fa-laptop icons"></i>Class
+                </NavLink>
+                <NavLink to="dashboard" className="nav-link ">
+                  <i className="fas fa-tachometer-alt icons"></i>Dashboard
+                </NavLink>
+                <NavLink to="tasks" className="nav-link">
+                  <i class="fa-solid fa-list-check icons"></i>Tasks
+                </NavLink>
+                <NavLink to="leaderboard" className="nav-link">
+                  <MdLeaderboard className="icons" />
+                  LeaderBoard
+                </NavLink>
+                <NavLink to="portfolio" className="nav-link">
+                  <i class="fa-solid fa-user-tie icons"></i>Portfolio
+                </NavLink>
+                <NavLink to="testmonial" className="nav-link">
+                  <i class="fa-solid fa-comment icons"></i>Testimonial
+                </NavLink>
+                <NavLink to="syllabus" className="nav-link">
+                  <i class="fa-solid fa-book icons"></i>Syllabus
+                </NavLink>
               </div>
             </div>
-
-            <button className="logout" onClick={logout} type="submit">
-              <i className="fas fa-sign-out nav-link-icon"></i>
-            </button>
           </nav>
         </aside>
 
