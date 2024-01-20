@@ -42,7 +42,7 @@ const Register = () => {
         try {
           //post method create new Account
           await axios.post(
-            "http://127.0.0.1:8080/api/v1/register",
+            "https://student-task-portal.onrender.com/api/v1/register",
             values
           );
           navigate("/portal/class");

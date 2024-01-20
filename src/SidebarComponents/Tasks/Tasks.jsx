@@ -11,7 +11,7 @@ const Tasks = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.post(`http://127.0.0.1:8080/api/v1/tasks`, {
+        const res = await axios.post(`https://student-task-portal.onrender.com/api/v1/tasks`, {
           userId: studentId,
         });
         setTasks(res.data.tasks);
