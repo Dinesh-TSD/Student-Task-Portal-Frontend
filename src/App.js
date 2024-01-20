@@ -6,6 +6,10 @@ import Dashboard from "./SidebarComponents/Dashboard/Dashboard";
 import Portal from "./components/Portal/Portal";
 import Class from "./SidebarComponents/Class/Class";
 import Tasks from "./SidebarComponents/Tasks/Tasks";
+import LeaderBoard from "./SidebarComponents/LeaderBoard/LeaderBoard";
+import Syllabus from "./SidebarComponents/Syllabus/Syllabus";
+import Testimonial from "./SidebarComponents/Testimonial/Testimonial";
+import Portfolio from "./SidebarComponents/Portfolio/Portfolio";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
             <Route path="class" element={<Class />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="tasks" element={<Tasks />} />
+            <Route path="leaderboard" element={<LeaderBoard />} />
+            <Route path="portfolio" element={<Portfolio />} />
+            <Route path="testmonial" element={<Testimonial />} />
+            <Route path="syllabus" element={<Syllabus />} />
           </Route>
         </Routes>
       </Router>

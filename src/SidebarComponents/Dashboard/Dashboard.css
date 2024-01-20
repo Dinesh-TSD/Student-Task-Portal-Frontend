@@ -1,0 +1,36 @@
+/* .chart-container {
+
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+
+} */
+
+.chart {
+    background-color: rgb(255, 255, 255);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    box-shadow: 2px 2px 20px 2px rgb(190, 190, 255);
+    border-radius: 5px;
+    /* background-color: rgb(255, 127, 80);
+    background-color: rgb(255, 226, 80);
+    background-color: rgb(194, 80, 255);
+    background-color: rgb(255, 80, 162);
+    background-color: rgb(255, 80, 80); */
+    /* background-color: rgb(156, 148, 247); */
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .chart {
+        height: auto;
+        width: auto;
+        
+        
+    }
+
+
+
+}

@@ -18,7 +18,7 @@ const Class = () => {
   return (
     <>
       <div className="content-container">
-        <div className="row">
+        <div className="row ">
           {/* Left side NumberComponent */}
           {selectedNumber ? (
             <ZoomMeeting data={data} />

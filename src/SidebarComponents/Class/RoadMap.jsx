@@ -4,13 +4,13 @@ import ClassData from "./ClassData";
 const RoadMap = ({ selectedNumber, handleNumberClick }) => {
   return (
     <>
-      <div className="col-xl-4">
+      <div className="col-xl-4 col-lg-7">
         <div className="road-cards shadow mb-4 mt-3">
           <div className="card-header py-3 ps-3">
             <h2 className="class-tittle">Road Map</h2>
           </div>
           
-          <div className="card-body">
+          <div className="card-body-road">
             {/* Right side list of numbers */}
             {ClassData.map((data,index) => {
               return <span

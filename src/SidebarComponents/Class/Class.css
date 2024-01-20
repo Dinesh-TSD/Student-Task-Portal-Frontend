@@ -2,7 +2,7 @@
 /* Add this CSS to your stylesheets or in a separate CSS file */
 .number-item {
     display: inline-block;
-    margin: 15px;
+    margin: 20px;
     padding-left: 15px;
     padding-top: 7px;
     width: 40px;
@@ -11,11 +11,24 @@
     cursor: pointer;
     border: 1px solid #ccc;
   }
-  .card-body{
-    padding-left: 40px;
+  .card-body-zoom{
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 40px !important;
+  }
+  .card-body-road{
+    padding-left: 30px;
   }
   .title{
     color: #6614ff;
+  }
+  .join{
+    background-color: rgb(0, 206, 3);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin-right: 20px !important;
   }
 /* Card styles */
 .cards {
@@ -24,18 +37,25 @@
   border-radius: 8px;
   border-top-right-radius: 8px !important;
   border-top-left-radius: 8px !important;
+  
 }
 .road-cards{
   word-wrap: break-word;
   border: 1px solid #ccc;
   border-radius: 8px;
+  
 }
 .zoom-test-body{
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 73px;
+    padding-bottom: 73px;
+    padding-left: 40px !important;
 }
   .card-header{
-    background-color: #5500ff;
+    background-color: rgb(66, 0, 197);
+    display: flex;
+    justify-content: space-between;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
   }
 
   .refer{
@@ -46,7 +66,7 @@
     color: white;
     padding-left: 40px;
     padding: 10px;
-    background-color: #6614ff;
+    background-color:rgb(66, 0, 197);
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
   }
@@ -105,6 +125,16 @@ label ,input{
     }
     .refer{
       height: auto;
+    }
+    .class-tittle{
+      font-size: 20px;
+      padding-top: 10px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+    .join{
+      padding: 10px;
+      margin-right: 10px !important;
     }
   }
 

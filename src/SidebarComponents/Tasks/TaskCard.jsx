@@ -17,10 +17,6 @@ const options = {
 // Format the date using toLocaleString
 const formattedDate = date.toLocaleString('en-IN', options);
 
-console.log(formattedDate);
-
-
-
   return (
     <>
         <div className="task-cards shadow mb-4 mt-3">
@@ -32,7 +28,7 @@ console.log(formattedDate);
             <div className="col-xl-4">
                 <span className='date'>Submited on {formattedDate}</span>
                 <div className='marks-bg'>
-                  <span className='marks'>10</span>
+                  <span className='marks'>{task.mark}</span>
                   <span className='marks'>Task</span>
                 </div>
             </div>

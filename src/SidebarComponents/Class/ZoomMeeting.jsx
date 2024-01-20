@@ -1,15 +1,17 @@
 import React from "react";
+import "./Class.css"
 
 const ZoomMeeting = ({ data }) => {
   return (
     <>
       <div className="col-xl-8 col-lg-7">
-        <div className="cards shadow mb-4 mt-3">
+        <div className="cards  shadow mb-4 mt-3">
           <div className="card-header py-3 ps-3">
             <h2 className="class-tittle">Join the class on time {data.id}</h2>
+            <button className="join">Join Class</button>
           </div>
 
-          <div className="card-body">
+          <div className="card-body-zoom">
             <h1 className="title">{data.title}</h1>
             <h4>Content</h4>
             <ul>
