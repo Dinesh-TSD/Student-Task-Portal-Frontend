@@ -9,7 +9,7 @@ const LeaderBoard = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get(`http://127.0.0.1:8080/api/v1/userlist`);
+        const res = await axios.get(`https://student-task-portal.onrender.com/api/v1/userlist`);
         console.log(res.data);
         setUsers(res.data.users);
       } catch (error) {
