@@ -123,7 +123,7 @@ const Register = () => {
         </div>
 
         <div className="row justify-content-center">
-          <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
+          <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10 ms-3 content">
             <p className="al mt-2">Already have an account ? Click Login</p>
             <Link className="btn btn-primary form-btns mb-3" to="/">
               Login
