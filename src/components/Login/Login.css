@@ -1,19 +1,33 @@
-.login-container{
-    background-color: rgba(0, 8, 255, 0.062);
-    height: 100vh;
+.login-container {
+    background: url('../../assets/dalle.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0px !important;
 }
-.login-form-container{
-    background-color: rgb(255, 255, 255);
+
+.login-form-container {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.433);
+    box-shadow: 2px 2px 30px 10px rgba(254, 254, 254, 0.51);
     width: 500px;
 }
-.form-heading{
+
+.form-heading {
     font-weight: 600;
-    color: blueviolet;
+    color: rgb(255, 255, 255);
 }
-.form-btns{
+label{
+    color: white;
+}
+.content{
+    color: white;
+}
+.form-btns {
     width: 100%;
     height: 40px;
 }

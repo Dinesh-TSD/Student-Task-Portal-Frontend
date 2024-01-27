@@ -105,7 +105,7 @@ const Login = () => {
 
             <div className="row justify-content-center">
               <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
-                <Link className="btn forgot mt-3" to="/forgot/password">
+                <Link className="btn forgot mt-3 content" to="/forgot/password">
                   Forgot Password ?
                 </Link>
               </div>
@@ -119,8 +119,8 @@ const Login = () => {
                   value={"Login"}
                 />
               </div>
-              <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10">
-                <p className="no-account mt-2">
+              <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10 ms-3">
+                <p className="no-account mt-2 content">
                   Don't have an account ? Click Register
                 </p>
                 <Link className="btn btn-primary form-btns mb-3" to="/register">
@@ -129,16 +129,7 @@ const Login = () => {
               </div>
             </div>
           </form>
-          <div className="row justify-content-center">
-            <div className="col-8 col-lg-9 col-sm-9 col-md-9 col-xl-10 google-btn">
-              {/* <button
-                onClick={''}
-                className="btn btn-primary form-btns mb-3"
-              >
-                Sign up with Google
-              </button> */}
-            </div>
-          </div>
+          
         </div>
       </div>
     </>
